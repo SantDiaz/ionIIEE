@@ -38,6 +38,7 @@ export interface UserI {
   nombre: string;
   apellido: string;
   correo: string;
+  uid: string;
   password: string;
   perfil: 'usuario'| 'admin',
 }
