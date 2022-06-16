@@ -17,7 +17,15 @@
     
   
   <ion-content>
-  
+    <div class="full-page-width">
+        <div class="center-content-container">
+            <div class="content-container">
+                <div style="font-size: 70px;" class=" content">Iniciar Sesion</div>
+            </div>
+      
+       
+          </div>
+      </div>
     <ion-grid class="grid1">
         <ion-row class="row1">
         </ion-row>
@@ -30,23 +38,20 @@
           <ion-slide>
               <div class="contaier-login">
                   <ion-grid>
-                      <ion-row>
-                          <ion-col>
-                              <h1>Iniciar Sesión</h1>
-                          </ion-col>
-                      </ion-row>
+
                       <ion-row>
                           <ion-col>
                               <ion-list>
-          
+                                <!-- [(ngModel)]="credenciales.correo"  -->
+                                <!--  [(ngModel)]="credenciales.password" -->
                                   <ion-item>
-                                      <ion-icon name="person" class="icon-login"></ion-icon>
-                                      <!-- <ion-input [(ngModel)]="credenciales.correo" name="user" type="text" required placeholder="Usuario"></ion-input> -->
+                                      <ion-icon  name="person" class="icon-login"></ion-icon>
+                                      <ion-input [(ngModel)]="credenciales.correo" name="user" type="text" required placeholder="Usuario"></ion-input>
                                   </ion-item>
                                   <br />
                                   <ion-item>
                                       <ion-icon name="lock-closed-outline" class="icon-login"></ion-icon>
-                                      <!-- <ion-input [(ngModel)]="credenciales.password"   name="password" type="password" required placeholder="Contraseña"></ion-input> -->
+                                      <ion-input [(ngModel)]="credenciales.password" name="password" type="password" required placeholder="Contraseña"></ion-input>
                                   </ion-item>
           
                               </ion-list>

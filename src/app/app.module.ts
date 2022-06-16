@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
+import { RouteReuseStrategy, Router, RouterModule } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,7 +16,8 @@ import { HomePage } from './home/home.page';
 import { SlideHomePage } from './pages/slide-home/slide-home.page';
 import { LoginComponent } from './pages/login/login.component';
 import { SlideComponent } from './pages/slide/slide.component';
-
+import { NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { SlideComponent } from './pages/slide/slide.component';
   AppRoutingModule,
   ComponentModule,
   HttpClientModule,
+  FormsModule,
   AngularFireModule.initializeApp(environment.firebaseConfig),
   AngularFireAuthModule,
   AngularFirestoreModule,

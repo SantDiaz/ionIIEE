@@ -2,86 +2,93 @@
   <ion-toolbar>
     <ion-buttons slot="start">
     </ion-buttons>
-
 <ion-buttons slot="start" >
     <ion-menu-button
     color="danger"
     menu="primerMenu"
     > </ion-menu-button>
 </ion-buttons>
-<img slot="start"  routerLink="/home" src="../../../assets/imgs/logoiiee.png" width="300" height="70"/>
-<ion-icon  slot="end" width="20" name="log-out-outline"></ion-icon>
+<img slot="start"  routerLink="/home" src="../../assets/imgs/logoiiee.png" width="300" height="70"/>
   </ion-toolbar>
 </ion-header>
 
 
-<div class="full-page-width">
-  <div class="center-content-container">
-      <div class="content-container">
-          <div style="font-size: 50px;" class=" content">Registrarse como nuevo usuario</div>
-      </div>
 
- 
-    </div>
-</div>
-<ion-slide  pager="true"  pager="false" #mySlider>
-  <div  class="contaier-login">  
-    <ion-row>
-
-      <ion-row>
-        <ion-col>
-            <ion-list>
-              <ion-item>
-                <!-- <ion-icon name="person" class="icon-login"></ion-icon> -->
-                <ion-input  name="user" type="text" required placeholder="Nombre"></ion-input>
-            </ion-item>
-            <br />
-            <ion-item>
-              <!-- <ion-icon name="person" class="icon-login"></ion-icon> -->
-              <ion-input  name="user" type="text" required placeholder="Apellido"></ion-input>
-          </ion-item>
-          <br />
-                <ion-item>
-                    <!-- <ion-icon name="person" class="icon-login"></ion-icon> -->
-                    <ion-input  name="user" type="text" required placeholder="Email"></ion-input>
-                </ion-item>
-                <br />
-                <ion-item>
-                    <!-- <ion-icon name="lock-closed-outline" class="icon-login"></ion-icon> -->
-                    <ion-label>  </ion-label>
-                    <ion-input    name="password" type="password" required placeholder="Contraseña"></ion-input>
-                </ion-item>
-                   <ion-item>
-      <!-- <ion-label>Pet</ion-label> -->
-      <ion-select placeholder="Area">
-        <ion-select-option placeholder="Area" value="cat">Cat</ion-select-option>
-        <ion-select-option value="dog">Dog</ion-select-option>
-      </ion-select>
-    </ion-item>
-            </ion-list>
-        </ion-col>
-    </ion-row>
-
-      <div class="buttonRe">
-          <ion-col>
-              <ion-button type="submit"  fill="solid" expand="l">
-                  Entrar
-              </ion-button>
-          </ion-col>
-          <ion-col>
-            <ion-button type="submit"  fill="solid" expand="l">
-                Entrar
-            </ion-button>
-        </ion-col>
-    </div>
-    
-  </ion-row>
-  </div>
-</ion-slide>
+  
 
 <ion-content>
+  <div class="full-page-width">
+      <div class="center-content-container">
+          <div class="content-container">
+              <div style="font-size: 45px;" class=" content">Registrarse como nuevo usuario</div>
+          </div>
+    
+     
+        </div>
+    </div>
+  <ion-grid class="grid1">
+      <ion-row class="row1">
+      </ion-row>
+      <ion-row class="row2">
+          <ion-col>
+          </ion-col>
+      </ion-row>
+  
+  </ion-grid>
+  <ion-slide >
+      <div class="contaier-login">
+          <ion-grid>
+           
+              <ion-row>
+                  <ion-col>
+                      <ion-list>
+    
+                          <ion-item>
+                              <ion-icon name="Nombre" class="icon-login"></ion-icon>
+                              <ion-input [(ngModel)]="datosUser.nombre" name="user" type="text" required placeholder="Nombre "></ion-input>
+                          </ion-item>
+                          <br />
+    
+                          <ion-item>
+                            <ion-icon name="person" class="icon-login"></ion-icon>
+                            <ion-input [(ngModel)]="datosUser.apellido" name="Apellido" type="text" required placeholder="Apellido"></ion-input>
+                        </ion-item>
+                        <br />
+                        <ion-item>
+                          <ion-icon name="lock-closed-outline" class="icon-login"></ion-icon>
+                          <ion-input [(ngModel)]="datosUser.correo"   name="Email" type="text" required placeholder="Email"></ion-input>
+                      </ion-item>
+                        <br>
+                        <ion-item>
+                            <ion-icon name="lock-closed-outline" class="icon-login"></ion-icon>
+                            <ion-input  [(ngModel)]="datosUser.password"  name="password" type="password" required placeholder="Contraseña"></ion-input>
+                        </ion-item>
+    
+                      </ion-list>
+                  </ion-col>
+              </ion-row>
+              <ion-row>
+    
+                  
+    
+                  <ion-col>
+                      <ion-button (click)="registrar()" type="submit"  fill="solid" expand="full">
+                          Registrarse
+                      </ion-button>
+                      <ion-button routerLink="/login" type="submit"  fill="solid" expand="full">
+                          Iniciar sesion
+                      </ion-button>
+                  </ion-col>
+              </ion-row>
 
- 
+          </ion-grid>
+      </div>
+    </ion-slide>
+</ion-content>
 
 
-<!--  -->
+
+
+
+
+
