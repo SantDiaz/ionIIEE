@@ -9,8 +9,10 @@ export class AuthService {
   constructor(private authFirebase: AngularFireAuth ) { }
 
   login(correo: string, password: string){
-    return  this.authFirebase.signInWithEmailAndPassword(correo, password)
+    // return  this.authFirebase.signInWithEmailAndPassword(correo, password)
+    return this.authFirebase.signInWithEmailAndPassword(correo, password)
   }
+
   logout(){
     this.authFirebase.signOut()
   }

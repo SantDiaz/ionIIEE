@@ -1,3 +1,87 @@
-<p>
-  registro works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    </ion-buttons>
+
+<ion-buttons slot="start" >
+    <ion-menu-button
+    color="danger"
+    menu="primerMenu"
+    > </ion-menu-button>
+</ion-buttons>
+<img slot="start"  routerLink="/home" src="../../../assets/imgs/logoiiee.png" width="300" height="70"/>
+<ion-icon  slot="end" width="20" name="log-out-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+
+<div class="full-page-width">
+  <div class="center-content-container">
+      <div class="content-container">
+          <div style="font-size: 50px;" class=" content">Registrarse como nuevo usuario</div>
+      </div>
+
+ 
+    </div>
+</div>
+<ion-slide  pager="true"  pager="false" #mySlider>
+  <div  class="contaier-login">  
+    <ion-row>
+
+      <ion-row>
+        <ion-col>
+            <ion-list>
+              <ion-item>
+                <!-- <ion-icon name="person" class="icon-login"></ion-icon> -->
+                <ion-input  name="user" type="text" required placeholder="Nombre"></ion-input>
+            </ion-item>
+            <br />
+            <ion-item>
+              <!-- <ion-icon name="person" class="icon-login"></ion-icon> -->
+              <ion-input  name="user" type="text" required placeholder="Apellido"></ion-input>
+          </ion-item>
+          <br />
+                <ion-item>
+                    <!-- <ion-icon name="person" class="icon-login"></ion-icon> -->
+                    <ion-input  name="user" type="text" required placeholder="Email"></ion-input>
+                </ion-item>
+                <br />
+                <ion-item>
+                    <!-- <ion-icon name="lock-closed-outline" class="icon-login"></ion-icon> -->
+                    <ion-label>  </ion-label>
+                    <ion-input    name="password" type="password" required placeholder="Contraseña"></ion-input>
+                </ion-item>
+                   <ion-item>
+      <!-- <ion-label>Pet</ion-label> -->
+      <ion-select placeholder="Area">
+        <ion-select-option placeholder="Area" value="cat">Cat</ion-select-option>
+        <ion-select-option value="dog">Dog</ion-select-option>
+      </ion-select>
+    </ion-item>
+            </ion-list>
+        </ion-col>
+    </ion-row>
+
+      <div class="buttonRe">
+          <ion-col>
+              <ion-button type="submit"  fill="solid" expand="l">
+                  Entrar
+              </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button type="submit"  fill="solid" expand="l">
+                Entrar
+            </ion-button>
+        </ion-col>
+    </div>
+    
+  </ion-row>
+  </div>
+</ion-slide>
+
+<ion-content>
+
+ 
+
+
+<!--  -->

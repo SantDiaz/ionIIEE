@@ -15,7 +15,6 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { HomePage } from './home/home.page';
 import { SlideHomePage } from './pages/slide-home/slide-home.page';
 import { LoginComponent } from './pages/login/login.component';
-import { HomePageModule } from './home/home.module';
 import { SlideComponent } from './pages/slide/slide.component';
 
 @NgModule({
