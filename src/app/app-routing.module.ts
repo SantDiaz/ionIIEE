@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { LoginComponent } from './pages/login/login.component';
-import { MenuComponent } from './component/menu/menu.component';
-import { SlideComponent } from './pages/slide/slide.component';
 
 
 const routes: Routes = [
@@ -16,9 +14,7 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full'
   },
-  {
-    path: 'menu', component: MenuComponent
-  },
+
   {
     path: 'cards',
     loadChildren: () => import('./pages/cards/cards.module').then( m => m.CardsPageModule)
@@ -29,9 +25,7 @@ const routes: Routes = [
   {
     path: 'login', component: LoginComponent
   },
-  {
-    path: 'slide', component: SlideComponent
-  },
+
   {
     path: 'prueba',
     loadChildren: () => import('./pages/prueba/prueba.module').then( m => m.PruebaPageModule)

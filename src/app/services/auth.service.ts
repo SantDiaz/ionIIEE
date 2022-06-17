@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth} from '@angular/fire/compat/auth';
 import { UserI } from '../models/models';
+import { IonicRouteStrategy } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,9 @@ export class AuthService {
   }
     registrarUser(datosUser: UserI){
     return  this.authFirebase.createUserWithEmailAndPassword(datosUser.correo, datosUser.password)
+    }
+
+    stateUser(){
+      return this.authFirebase.authState
     }
 }

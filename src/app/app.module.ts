@@ -4,7 +4,6 @@ import { RouteReuseStrategy, Router, RouterModule } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ComponentModule } from './component/component.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment.prod';
@@ -15,9 +14,9 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { HomePage } from './home/home.page';
 import { SlideHomePage } from './pages/slide-home/slide-home.page';
 import { LoginComponent } from './pages/login/login.component';
-import { SlideComponent } from './pages/slide/slide.component';
 import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { MenuComponent } from './pages/menu/menu.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,14 +25,13 @@ import { FormsModule } from '@angular/forms';
     RegistroComponent,
     HomePage,
     CardsPage,
-    SlideComponent
+    MenuComponent,
     ],
   entryComponents: [],
 
   imports: [BrowserModule,
   IonicModule.forRoot(), 
   AppRoutingModule,
-  ComponentModule,
   HttpClientModule,
   FormsModule,
   AngularFireModule.initializeApp(environment.firebaseConfig),

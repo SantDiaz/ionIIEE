@@ -52,4 +52,20 @@ export class RegistroComponent implements OnInit {
     //     this.interaction.presentToast('Registrado con exito');
       }
   }
+
+
+  // async IngresarConGoogle(){
+  //   const{ email, pass } = this.datosUser.value;
+  //   try {
+  //     const user = this.auth.loginWithGoogle;
+      
+            
+  //     if (user){
+  //       localStorage.setItem('usuario', JSON.stringify(user.user))
+  //       this.router.navigate(['/Inicio']);
+  //     } 
+  //    } catch (err){
+  //      console.log(err)
+  //    } 
+  // }
 }

@@ -11,6 +11,8 @@ import { InteractionService } from '../services/interaction.service';
 })
 export class HomePage {
 
+  login: boolean = false;
+
   public ocultar1: boolean = false;
 //   ocultar1: boolean     = false;
   ocultar2: boolean     = false;
@@ -65,7 +67,18 @@ export class HomePage {
   constructor(private menuCtrl: MenuController,
               private auth: AuthService,
               private interaction: InteractionService,
-              private router: Router) {}
+              private router: Router) {
+                        this.auth.stateUser().subscribe( res => {
+                          if (res){
+                              console.log("logueado");
+                              this.login=true;
+                          }else {
+                            console.log("no esta logueado");
+                            this.login=false;
+                          }
+                        });
+
+              }
 
      
 ngOnInit(){
