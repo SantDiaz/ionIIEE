@@ -1,82 +1,21 @@
-.grid1 {
-  height: 100%;
-  padding: 0px;
+
+
+
+
+ion-slides {
+  display: block;
+  height: 30%;
 }
-
-ion-avatar {
-  height: 100px;
-}
-
-
-.contaier-login {
-  width: 90%;
-  padding: 10px;
-  background: #e93e24;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
-}
-
-
-.row1 {
-  height: 50%;
-  background: -moz-linear-gradient(45deg, rgb(222, 111, 20) 0%, rgba(225, 140, 20, 0.8) 100%);
-  background: -webkit-linear-gradient(45deg, rgb(200, 116, 7) 0%, rgba(204, 100, 8, 0.8) 100%);
-  background: linear-gradient(45deg, rgb(209, 93, 16) 0%, rgba(196, 91, 12, 0.8) 100%);
-
-  
-}
-.contt{
-  height: 50%;
-  width: 90%;
-}
-.titulo{
-  height: 50%;
-  color:  #000;
-  font-size:medium;
-  font-family: 'Times New Roman', Times, serif;
-  
-}
-.row2 {
-  height: 50%;
-}
-
-ion-icon {
-  margin-right: 15px;
-}
-
-ion-button {
-  margin-top: 5px;
-  margin-bottom: 15px;
-}
-
-ion-slide {
-  width: 100%;
-  height: 100%;
-  position: absolute !important;
-  top: 0px !important;
-}
-
-
-
-
-
-ion-slide {
+ion-slides {
   background-color: rgb(244, 70, 18);
 }
-
-ion-img {    
-  // margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 75%;
-  max-width: 800px;
-  max-height: 60%;
+.slide-img-padding{
+  padding: 40px;
 }
-
-ion-button {
-  margin-bottom: 30px;
+h3{
+  font-size: 30px;
+  font-weight: lighter;
+  margin-bottom: 50px;
 }
 
 
@@ -90,5 +29,7 @@ ion-button {
 
 
 
-////////// SLIDEEEEEEEE
-/// 
+
+
+
+

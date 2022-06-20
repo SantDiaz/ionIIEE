@@ -13,56 +13,21 @@ export class HomePage {
 
   login: boolean = false;
 
-  public ocultar1: boolean = false;
-//   ocultar1: boolean     = false;
-  ocultar2: boolean     = false;
-  ocultar3: boolean     = false;
-  ocultar4: boolean     = false;    
-  ocultartodos: boolean = false; 
-  
-  feeds: any[] = [
+
+  slides  = [
     {
-      id: 1, 
-      // logo: 'assets/imgs/2.jpg', 
-      artista: 'pgb', 
-      src: 'assets/imgs/posts/3.jpg',
-      description: 'Producto BRUTO',
+      img:  '../../assets/icons/icon2Grande.svg',
+      titulo: 'PGB <br> Producto bruto interno',
     },
     {
-      id: 2, 
-      // logo: 'assets/imgs/2.jpg', 
-      artista: 'pgb2', 
-      src: 'assets/imgs/posts/3.jpg',
-      description: 'Producto BRUTO2',
+      img:  '../../assets/icons/iconPequeño.svg ',
+      titulo: 'Indice de precio <br> al consumidor',
     },
     {
-      id: 3, 
-      // logo: 'assets/imgs/2.jpg', 
-      artista: 'pgb3', 
-      src: 'assets/imgs/posts/3.jpg',
-      description: 'Producto BasdasdRUTO3',
+      img:  '../../assets/icons/icon2Pequeño.svg ',
+      titulo: 'Indice de precio <br> al consumidor',
     },
-    {
-      id: 4, 
-      // logo: 'assets/imgs/2.jpg', 
-      artista: 'pgb2', 
-      src: 'assets/imgs/posts/3.jpg',
-      description: 'Producto BRUTO2adasdasda',
-    },
-    {
-      id: 5, 
-      // logo: 'assets/imgs/2.jpg', 
-      artista: 'pgb3', 
-      src: 'assets/imgs/posts/3.jpg',
-      description: 'Producto BRUTOsdasdasdasd3',
-    },
-    ];
-    slideOps = {
-      initialSlide: 2,
-      slidesPerView: 4,
-      centeredSlides: true,
-      speed: 400
-    };
+  ]
 
   constructor(private menuCtrl: MenuController,
               private auth: AuthService,
@@ -95,10 +60,6 @@ logout(){
       this.router.navigate(['/login'])
 }
 
-swipeNext(){
-  // this.slides.slideNext();
-  // this.slides.slideNext();
-}
 
 
 

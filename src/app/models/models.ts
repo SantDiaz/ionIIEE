@@ -40,5 +40,5 @@ export interface UserI {
   correo: string;
   uid: string;
   password: string;
-  perfil: 'usuario'| 'admin',
+  perfil: 'visitante'| 'admin',
 }

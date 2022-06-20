@@ -2,45 +2,34 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { TareasComponent } from './pages/tareas/tareas.component';
 
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
+    path: '', redirectTo: 'login', pathMatch: 'full'
   },
 
-  {
-    path: 'cards',
-    loadChildren: () => import('./pages/cards/cards.module').then( m => m.CardsPageModule)
-  },
   {
     path: 'registro', component: RegistroComponent
   },
   {
     path: 'login', component: LoginComponent
   },
-
   {
-    path: 'prueba',
-    loadChildren: () => import('./pages/prueba/prueba.module').then( m => m.PruebaPageModule)
+    path: 'admin', component: AdminComponent
   },
   {
-    path: 'slide-home',
-    loadChildren: () => import('./pages/slide-home/slide-home-routing.module').then( m => m.SlideHomePageRoutingModule)
+    path: 'tareas', component: TareasComponent
   },
-  
-
-  // {
-  //   path: 'slide-home',
-  //   loadChildren: () => import('./pages/slide-home/slide-home.module').then( m => m.SlideHomePageModule)
-  // }, 
-
+  {
+    path: 'cards',
+    loadChildren: () => import('./pages/cards/cards.module').then( m => m.CardsPageModule)
+  },
 ];
 
 @NgModule({

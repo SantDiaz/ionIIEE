@@ -1,19 +1,73 @@
   <ion-menu side="start" menuId="primerMenu" contentId="menu">
     <ion-header>
       <ion-toolbar color="primary">
-        <ion-title>Menu de Opciones</ion-title>
+        <ion-title>IIEE</ion-title>
       </ion-toolbar>
     </ion-header>
 
   <ion-content>
+
     <ion-list>
-      <ion-menu-toggle  >
-        <ion-item  routerLink="/action-sheet">Inicio</ion-item>
-        <ion-item routerLink="/toggle">Agenda</ion-item>
-        <ion-item  routerLink="/login">iniciar sesion</ion-item>
-        <ion-item routerLink="/alert">alert</ion-item>
-        <ion-item routerLink="/action-sheet">Menu Item</ion-item>
+
+      <ion-list-header>
+        <strong>Menú</strong>
+      </ion-list-header>
+    
+      <ion-menu-toggle>
+        <ion-item *ngIf="rol === 'admin' " detail="true" [routerLink]="['/admin']" >
+              <ion-label>
+                Admin
+              </ion-label>
+              <ion-icon slot="start" name="home"></ion-icon>
+        </ion-item>
+    
       </ion-menu-toggle>
+      
+      <ion-item detail="true" *ngIf="login == true" [routerLink]="['/tareas']" >
+        <ion-label>
+          Tareas
+        </ion-label>
+        <ion-icon slot="start" name="apps"></ion-icon>
+      </ion-item>
+      
+      <ion-menu-toggle *ngIf="login == false">
+        <ion-item  detail="true" [routerLink]="['/login']" routerLinkActive="router-link-active" >
+          <ion-label>
+           Iniciar Sesion
+          </ion-label>
+          <ion-icon slot="start" name="apps"></ion-icon>
+        </ion-item>
+    
+      </ion-menu-toggle>
+    
+      <ion-menu-toggle *ngIf="login == false">
+        <ion-item  detail="true" [routerLink]="['/registro']" routerLinkActive="router-link-active" >
+          <ion-label>
+           Registrarse
+          </ion-label>
+          <ion-icon slot="start" name="apps"></ion-icon>
+        </ion-item>
+    
+      </ion-menu-toggle>
+
+      
+    
+    <ion-menu-toggle *ngIf="login">
+    
+      <ion-item detail="true" (click)="logout()">
+        <ion-label>
+         Cerrar Sesion 
+        </ion-label>
+        <ion-icon slot="start" name="log-out"></ion-icon>
+      </ion-item>
+    
+    </ion-menu-toggle>
+      
+    
     </ion-list>
   </ion-content>
 </ion-menu>
+
+
+<!-- <ion-item  routerLink="/home">Inicio</ion-item>
+<ion-item  routerLink="/admin">Administrador</ion-item> -->

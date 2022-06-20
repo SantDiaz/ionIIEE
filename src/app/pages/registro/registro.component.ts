@@ -4,6 +4,8 @@ import { AuthService } from '../../services/auth.service';
 import { FirestoreService } from '../../services/firestore.service';
 import { InteractionService } from '../../services/interaction.service';
 import { Router } from '@angular/router';
+// import { AngularFirestore } from '@angular/fire/compat/firestore';
+
 
 
 @Component({
@@ -20,11 +22,12 @@ export class RegistroComponent implements OnInit {
       correo: null,
       uid: null,
       password: null,
-      perfil: 'usuario',
+      perfil: 'visitante',
     }
 
   constructor( private auth: AuthService,
               private firestore: FirestoreService,
+              // private firestore: AngularFirestore,
               private interaction: InteractionService,
               private router: Router) { }
 
@@ -40,16 +43,15 @@ export class RegistroComponent implements OnInit {
       })
       if(res){
         // console.log('U exito');
-        const path = 'Usuarios';
+        const path = 'usuarios';
         const id = res.user.uid;
         this.datosUser.uid=id;
         this.datosUser.password=null;
         this.interaction.closeLoading();
         this.interaction.presentToast('Registrado con exito');
         this.router.navigate(['/home']);
-    // await this.firestore.createDoc(this.datosUser, path, id);
- 
-    //     this.interaction.presentToast('Registrado con exito');
+    await this.firestore.createDoc(this.datosUser, path, id);
+        this.interaction.presentToast('Registrado con exito');
       }
   }
 
