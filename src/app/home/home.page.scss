@@ -1,24 +1,36 @@
 
 
-
+ion-content{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,105,8,1) 0%, rgba(111,49,49,1) 100%, rgba(0,212,255,1) 100%);
+}
 
 ion-slides {
   display: block;
   height: 30%;
 }
 ion-slides {
-  background-color: rgb(244, 70, 18);
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,105,8,1) 0%, rgba(111,49,49,1) 100%, rgba(0,212,255,1) 100%);
 }
 .slide-img-padding{
   padding: 40px;
+  width: 50%;
 }
 h3{
-  font-size: 30px;
+  font-size: 1.5em;
   font-weight: lighter;
   margin-bottom: 50px;
 }
 
+@media screen and (max-width: 850px) {
+  h3{
+    font-size: 1.7em ;
+    margin-left: 5px;
+  }
+  
 
+}
 
 
 

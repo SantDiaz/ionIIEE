@@ -11,16 +11,14 @@
     -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
-    margin-top: 40%;
+    margin-top: 20%;
 }
 
 
 .row1 {
     height: 50%;
-    background: -moz-linear-gradient(45deg, rgb(222, 111, 20) 0%, rgba(225, 140, 20, 0.8) 100%);
-    background: -webkit-linear-gradient(45deg, rgb(200, 116, 7) 0%, rgba(204, 100, 8, 0.8) 100%);
-    background: linear-gradient(45deg, rgb(209, 93, 16) 0%, rgba(196, 91, 12, 0.8) 100%);
-
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,105,8,1) 0%, rgba(111,49,49,1) 100%, rgba(0,212,255,1) 100%);
     
 }
 .contt{
@@ -59,23 +57,31 @@ ion-slide {
 .full-page-width {
     width: 100%;
     overflow: hidden;
-    background-color:rgb(250, 74, 21);
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,105,8,1) 0%, rgba(111,49,49,1) 100%, rgba(0,212,255,1) 100%);
     height: 500px;
 }
 
 .content-container {
     width:100%;
-    
-    background-color:rgba(48, 48, 48, 0.399);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,105,8,1) 0%, rgba(168,135,76,1) 56%, rgba(0,212,255,1) 100%);
     margin: 0 auto;
     padding: 5px;
 }
+
+
 .content {
     width:100%;
     height: 100px;
     background-color:#ca8875fb;
-    text-align:center;
-    font-family: 'helva';
-    font-size: large;
-    color: rgb(248, 231, 231);
+
+    }
+
+    h1{
+        text-align:center;
+        font-family: 'Verdana ';
+        font-size: 4em;
+        color: rgb(248, 231, 231);
+        
     }
