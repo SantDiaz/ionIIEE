@@ -19,31 +19,36 @@ export class HomePage {
       img:  '../../assets/icons/icon2Grande.svg',
       titulo: 'Poblacion',
       valor: '46.234.830',
-      tiempo: 'Estimacion 2022'
+      tiempo: 'Estimacion 2022',
+      url: 'https://www.indec.gob.ar/uploads/informesdeprensa/mercado_trabajo_eph_4trim211A57838DEC.pdf',
     },
     {
       img:  '../../assets/icons/icon2Grande.svg ',
       titulo: 'Tasa de desocupacion',
       valor: '7,0%',
-      tiempo: 'Cuatro trimestre 2021'
+      tiempo: 'Cuatro trimestre 2021',
+      url: 'https://www.indec.gob.ar/uploads/informesdeprensa/mercado_trabajo_eph_4trim211A57838DEC.pdf',
     },
     {
       img:  '../../assets/icons/icon2Grande.svg ',
       titulo: 'Precio al consumidor',
       valor: '5,1%',
-      tiempo: 'Mayo 2022'
+      tiempo: 'Mayo 2022',
+      url: 'https://www.indec.gob.ar/uploads/informesdeprensa/mercado_trabajo_eph_4trim211A57838DEC.pdf',
     },
     {
       img:  '../../assets/icons/icon2Grande.svg ',
       titulo: 'Indice de produccion industrial manufacturero',
       valor: '5,0%',
-      tiempo: 'Abril 2022'
+      tiempo: 'Abril 2022',
+      url: 'https://www.indec.gob.ar/uploads/informesdeprensa/mercado_trabajo_eph_4trim211A57838DEC.pdf',
     },
     {
       img:  '../../assets/icons/icon2Grande.svg ',
       titulo: 'Estimador mensual de actividad economica',
       valor: '-0,7%',
-      tiempo: 'Marzo 2022'
+      tiempo: 'Marzo 2022',
+      url: 'https://www.indec.gob.ar/uploads/informesdeprensa/mercado_trabajo_eph_4trim211A57838DEC.pdf',
     },
   ]
 

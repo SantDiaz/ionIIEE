@@ -12,3 +12,88 @@
   </ion-toolbar>
 </ion-header>
 
+
+<ion-content>
+
+        <ion-grid>
+
+          <ion-row class="ion-justify-content-end">
+              <ion-col size="5">
+                  <ion-button (click)="AddTarea()">
+                      Añadir nuevo
+                  </ion-button>
+              </ion-col>
+          </ion-row>
+
+            <ion-row *ngFor="let tarea of tareas" >
+                <ion-col> 
+                    <ion-label>
+                        {{tarea.area}}
+                    </ion-label>
+                </ion-col>
+
+                <ion-col> 
+                    <ion-label>
+                        {{tarea.nombre}}
+                    </ion-label>
+                </ion-col>
+
+                <ion-col> 
+                    <ion-label>
+                    {{tarea.apellido}}
+                    </ion-label>
+                </ion-col>
+                <ion-col> 
+                  <ion-label>
+                  {{tarea.tarea}}
+                  </ion-label>
+                </ion-col>
+                <ion-col>
+                <ion-button>
+                      <ion-button>
+                          <ion-icon name="create"></ion-icon>
+                      </ion-button>
+                      <ion-button>
+                        <ion-icon color="danger" name="trash"></ion-icon>
+                      </ion-button>
+                </ion-button>
+                </ion-col>
+            </ion-row>
+
+              <ion-row>
+                <ion-col *ngIf="nuevaTarea">
+                <ion-list>
+                  <ion-item>
+                    <ion-select [(ngModel)]="nuevaTarea.area" okText="Aceptar" cancelText="Cancelar" placeholder="Seleccionar equipo">
+                      <ion-select-option *ngFor="let area of Equiposiiee" [value]="area">{{area}}</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-list>
+
+               
+                  <ion-item>
+                    <ion-label position="floating">
+                      Nombre
+                    </ion-label>
+                    <ion-input [(ngModel)]="nuevaTarea.nombre"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating">
+                      Apellido
+                    </ion-label>
+                    <ion-input [(ngModel)]="nuevaTarea.apellido"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating">
+                      Tarea
+                    </ion-label>
+                    <ion-input [(ngModel)]="nuevaTarea.tarea"></ion-input>
+                  </ion-item>
+                  <ion-button (click)="saveTarea()" expand="full">Guardar</ion-button>
+                </ion-col>
+              </ion-row>
+
+
+        </ion-grid>
+
+</ion-content>
