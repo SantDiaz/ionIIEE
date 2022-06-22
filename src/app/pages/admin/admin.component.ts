@@ -36,8 +36,18 @@ AddTarea(){
   }
 
   loadEquipos(){ 
+    const path = 'tareas';
+    this.db.getCollection<EquipoI>(path).subscribe( res => {
+      if(res){
+        this.tareas = res; 
+      }
+    })
   }
 
+  edit(tarea: EquipoI){
+    console.log('fuuncio', tarea);
+    this.nuevaTarea = tarea;
+  }
 
   async saveTarea(){
     await this.interacion.presentLoading('Guardando...');
@@ -47,5 +57,15 @@ AddTarea(){
     await  this.db.createDoc(this.nuevaTarea, path, this.nuevaTarea.id);
       this.interacion.presentToast('Guardado con exito');
       this.interacion.closeLoading();
+  }
+
+async  delete(tarea: EquipoI){
+  const res = await this.interacion.presentAlert('Alerta', '¿Seguro que deseas eliminar?');
+    console.log('respuesta:', res)
+    if (res){
+        const path = 'tareas';
+    await this.db.deleteDoc(path, tarea.id);
+        this.interacion.presentToast('Eliminado con exito');
+    }
   }
 }
