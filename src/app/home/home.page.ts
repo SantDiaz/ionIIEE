@@ -3,6 +3,7 @@ import { MenuController } from '@ionic/angular';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { InteractionService } from '../services/interaction.service';
+import { FirestoreService } from '../services/firestore.service';
 
 @Component({
   selector: 'app-home',
@@ -44,7 +45,7 @@ export class HomePage {
       url: 'https://www.indec.gob.ar/uploads/informesdeprensa/mercado_trabajo_eph_4trim211A57838DEC.pdf',
     },
     {
-      img:  '../../assets/icons/icon2Grande.svg ',
+      img:  '../../assets/icons/iconPequeño.svg ',
       titulo: 'Estimador mensual de actividad economica',
       valor: '-0,7%',
       tiempo: 'Marzo 2022',
@@ -55,6 +56,7 @@ export class HomePage {
   constructor(private menuCtrl: MenuController,
               private auth: AuthService,
               private interaction: InteractionService,
+              private db: FirestoreService,
               private router: Router) {
                         this.auth.stateUser().subscribe( res => {
                           if (res){

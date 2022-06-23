@@ -1,4 +1,13 @@
 
+export interface SlideI{
+  id: string;
+  titulo: string;
+  img: string;
+  valor: string;
+  tiempo: string;
+  url: string;
+}  
+
 export interface UserI {
   nombre: string;
   apellido: string;

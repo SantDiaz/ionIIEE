@@ -14,21 +14,27 @@
 
 
 <ion-content>
-
+<div class="fondo">
         <ion-grid>
-
+          <!--  LISTA DE TAREAS -->
           <ion-row class="ion-justify-content-end">
               <ion-col size="5">
                   <ion-button (click)="AddTarea()">
-                      Añadir nuevo
+                      Añadir Tarea
                   </ion-button>
               </ion-col>
+              <ion-col size="5">
+                <ion-button (click)="AddSlide()">
+                    Añadir Slide
+                </ion-button>
+            </ion-col>
           </ion-row>
 
+          <ion-label class="tituloTarea"> TAREAS:</ion-label>
             <ion-row *ngFor="let tarea of tareas" >
-                <ion-col> 
+                <ion-col >
                     <ion-label>
-                        {{tarea.area}}
+                       {{tarea.area}}
                     </ion-label>
                 </ion-col>
 
@@ -59,7 +65,55 @@
                 </ion-button>
                 </ion-col>
             </ion-row>
+             <!-- FIN  LISTA DE TAREAS -->
 
+
+
+            <!-- LISTA DE SLIDEEE -->
+            <ion-label class="tituloTarea"> SLIDE:</ion-label>
+            <ion-row *ngFor="let slides of slide" >
+                <ion-col >
+                    <ion-label>
+                       {{slides.titulo}}
+                    </ion-label>
+                </ion-col>
+
+                <ion-col> 
+                    <ion-label>
+                      {{slides.img}}
+                    </ion-label>
+                </ion-col>
+
+                <ion-col> 
+                    <ion-label>
+                      {{slides.valor}}
+                    </ion-label>
+                </ion-col>
+                <ion-col> 
+                  <ion-label>
+                    {{slides.tiempo}}
+                  </ion-label>
+                </ion-col>
+                <ion-col> 
+                  <ion-label>
+                    {{slides.url}}
+                  </ion-label>
+                </ion-col>
+                <ion-col>
+                <ion-button>
+                      <ion-button (click)="editSlide(slides)">
+                          <ion-icon  name="create"></ion-icon>
+                      </ion-button>
+                      <ion-button (click)="deleteSlide(slides)">
+                        <ion-icon color="danger" name="trash"></ion-icon>
+                      </ion-button>
+                </ion-button>
+                </ion-col>
+            </ion-row>
+
+            <!-- FIN SLIDEEE -->
+
+            <!-- AÑADIR TAREAS -->
               <ion-row>
                 <ion-col *ngIf="nuevaTarea">
                 <ion-list>
@@ -92,8 +146,49 @@
                   <ion-button (click)="saveTarea()" expand="full">Guardar</ion-button>
                 </ion-col>
               </ion-row>
+              <!-- FIN AÑADIR TAREAS -->
+
+
+
+              <!-- AÑADIR SLIDE -->
+              <ion-row>
+                <ion-col *ngIf="nuevoSlide">
+                  <ion-item>
+                    <ion-label position="floating">
+                      Titulo
+                    </ion-label>
+                    <ion-input [(ngModel)]="nuevoSlide.titulo"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating">
+                      Imagen
+                    </ion-label>
+                    <ion-input [(ngModel)]="nuevoSlide.img"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating">
+                      Valor
+                    </ion-label>
+                    <ion-input [(ngModel)]="nuevoSlide.valor"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating">
+                      Tiempo
+                    </ion-label>
+                    <ion-input [(ngModel)]="nuevoSlide.tiempo"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating">
+                      Url
+                    </ion-label>
+                    <ion-input [(ngModel)]="nuevoSlide.url"></ion-input>
+                  </ion-item>
+                  <ion-button (click)="saveSlide()" expand="full">Guardar</ion-button>
+                </ion-col>
+              </ion-row>
+              <!-- Fin añadir slide -->
 
 
         </ion-grid>
-
+      </div>
 </ion-content>

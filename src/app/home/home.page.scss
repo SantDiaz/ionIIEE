@@ -7,7 +7,7 @@ ion-content{
 
 ion-slides {
   display: block;
-  height: 30%;
+  height: 50%;
 }
 ion-slides {
   background: rgb(2,0,36);
@@ -15,8 +15,9 @@ ion-slides {
 }
 .slide-img-padding{
   padding: 40px;
-  width: 50%;
+  width: 70%;
 }
+
 h3{
   font-size: 1.5em;
   font-weight: lighter;
@@ -29,9 +30,11 @@ h3{
     margin-left: 5px;
   }
   
-  .redirecto{
-      margin-top: 1%;
-  }
+  // .redirecto{
+  //     margin-top: 1%;
+  //     font-family: 'Courier', monospace;
+      
+  // }
 }
 
 

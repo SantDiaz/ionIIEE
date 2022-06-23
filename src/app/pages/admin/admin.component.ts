@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EquipoI, EquiposIIEE } from 'src/app/models/models';
+import { EquipoI, EquiposIIEE, SlideI } from 'src/app/models/models';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { InteractionService } from 'src/app/services/interaction.service';
 
@@ -11,9 +11,9 @@ import { InteractionService } from 'src/app/services/interaction.service';
 export class AdminComponent implements OnInit {
 
   tareas: EquipoI[] =[];
-
+  slide: SlideI[] =[];
   nuevaTarea: EquipoI;
-
+  nuevoSlide: SlideI;
   Equiposiiee = EquiposIIEE;
 
   constructor(private db: FirestoreService,
@@ -23,11 +23,12 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
     this.loadEquipos();
+    this.loadSlide();
   }
 
 AddTarea(){
-       this.nuevaTarea={
-         id: this.db.getId(), //Crea un id aleatorio de muchos digitos 
+      this.nuevaTarea={
+      id: this.db.getId(), //Crea un id aleatorio de muchos digitos 
       area: null,
       nombre: '', 
       apellido: '',
@@ -68,4 +69,52 @@ async  delete(tarea: EquipoI){
         this.interacion.presentToast('Eliminado con exito');
     }
   }
+
+
+  // SLIDE
+
+  AddSlide(){
+   this.nuevoSlide={
+   id: this.db.getId(), //Crea un id aleatorio de muchos digitos 
+   titulo: '',
+   img: '', 
+   valor: '',
+   tiempo: '',
+   url: null,
+  }
+  }
+
+  loadSlide(){ 
+    const path = 'slides';
+    this.db.getCollection<SlideI>(path).subscribe( res => {
+      if(res){
+        this.slide = res; 
+      }
+    })
+  }
+
+ async saveSlide(){
+    await this.interacion.presentLoading('Guardando...');
+    // console.log('saveee', this.nuevoSlide);
+    const path = 'slides';
+   
+  await  this.db.createDoc(this.nuevoSlide, path, this.nuevoSlide.id);
+    this.interacion.presentToast('Guardado con exito');
+    this.interacion.closeLoading();
+  }
+
+  editSlide(slides: SlideI){
+    console.log('fuuncio', slides);
+    this.nuevoSlide = slides;
+  }
+
+  async  deleteSlide(slides: SlideI){
+    const res = await this.interacion.presentAlert('Alerta', '¿Seguro que deseas eliminar?');
+      console.log('respuesta:', res)
+      if (res){
+          const path = 'slides';
+      await this.db.deleteDoc(path, slides.id);
+          this.interacion.presentToast('Eliminado con exito');
+      }
+    }
 }

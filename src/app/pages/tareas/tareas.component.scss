@@ -1,0 +1,21 @@
+.fondo{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,105,8,1) 0%, rgba(168,135,76,1) 56%, rgba(0,212,255,1) 100%);
+    margin: 0 auto;
+}
+
+
+
+@media screen and (max-width: 850px) {
+   
+ 
+    .titulo{
+        margin-left: 5px;
+        text-align:center;
+        padding: 05%;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 2.5em;
+        color: rgb(248, 231, 231);
+    }
+  }
+  
