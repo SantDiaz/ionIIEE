@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EquipoI, EquiposIIEE, SlideI } from 'src/app/models/models';
+import { FirestorageService } from 'src/app/services/firestorage.service';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { InteractionService } from 'src/app/services/interaction.service';
 
@@ -13,12 +14,14 @@ export class AdminComponent implements OnInit {
   tareas: EquipoI[] =[];
   slide: SlideI[] =[];
   nuevaTarea: EquipoI;
-  nuevoSlide: SlideI;
-  Equiposiiee = EquiposIIEE;
 
+  Equiposiiee = EquiposIIEE;
+  slides: SlideI[] =[];
+  nuevoSlide: SlideI;
+  nuevaImage='';
   constructor(private db: FirestoreService,
               private interacion: InteractionService, 
-              
+              private firestorageService: FirestorageService,
               ) { }
 
   ngOnInit() {
@@ -80,7 +83,7 @@ async  delete(tarea: EquipoI){
    img: '', 
    valor: '',
    tiempo: '',
-   url: null,
+   url: '',
   }
   }
 
@@ -117,4 +120,20 @@ async  delete(tarea: EquipoI){
           this.interacion.presentToast('Eliminado con exito');
       }
     }
+
+
+  async  openImage(event: any){
+        // if(event.target.files && event.target.files[0]){
+        //   const reader = new FileReader();
+        //   reader.onload = ((image) => {
+        //     this.nuevaImage = image.target.result as string;
+
+        //   });
+        //   reader.readAsDataURL(event.target.files[0])
+        // }
+    const res = await this.firestorageService.openImage()
+    console.log("proomesa", res);
+    console.log("fin promesa");
+  }
+
 }

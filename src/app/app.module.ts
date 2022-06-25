@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './pages/menu/menu.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { TareasComponent } from './pages/tareas/tareas.component';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,8 @@ import { TareasComponent } from './pages/tareas/tareas.component';
   AngularFireModule.initializeApp(environment.firebaseConfig),
   AngularFireAuthModule,
   AngularFirestoreModule,
+  AngularFireStorageModule,
+  // MatDialogModule,
   
 
 

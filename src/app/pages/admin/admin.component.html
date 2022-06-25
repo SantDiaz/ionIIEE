@@ -15,16 +15,22 @@
 
 <ion-content>
 <div class="fondo">
+
+    <div class="center-content-container">
+        <div class="content-container">
+            <h1  class="content">ADMINISTRADOR</h1>
+        </div>
+      </div>
         <ion-grid>
           <!--  LISTA DE TAREAS -->
           <ion-row class="ion-justify-content-end">
               <ion-col size="5">
-                  <ion-button (click)="AddTarea()">
+                  <ion-button color="secondary" (click)="AddTarea()">
                       Añadir Tarea
                   </ion-button>
               </ion-col>
               <ion-col size="5">
-                <ion-button (click)="AddSlide()">
+                <ion-button color="secondary" (click)="AddSlide()">
                     Añadir Slide
                 </ion-button>
             </ion-col>
@@ -55,11 +61,11 @@
                   </ion-label>
                 </ion-col>
                 <ion-col>
-                <ion-button>
-                      <ion-button (click)="edit(tarea)">
+                <ion-button color="primary">
+                      <ion-button color="secondary" (click)="edit(tarea)">
                           <ion-icon  name="create"></ion-icon>
                       </ion-button>
-                      <ion-button (click)="delete(tarea)">
+                      <ion-button color="secondary" (click)="delete(tarea)">
                         <ion-icon color="danger" name="trash"></ion-icon>
                       </ion-button>
                 </ion-button>
@@ -101,18 +107,20 @@
                 </ion-col>
                 <ion-col>
                 <ion-button>
-                      <ion-button (click)="editSlide(slides)">
-                          <ion-icon  name="create"></ion-icon>
+                      <ion-button color="secondary" (click)="editSlide(slides)">
+                          <ion-icon color="danger"   name="create"></ion-icon>
                       </ion-button>
-                      <ion-button (click)="deleteSlide(slides)">
+                      <ion-button color="secondary" (click)="deleteSlide(slides)">
                         <ion-icon color="danger" name="trash"></ion-icon>
                       </ion-button>
                 </ion-button>
                 </ion-col>
             </ion-row>
+          
+          
 
             <!-- FIN SLIDEEE -->
-
+ 
             <!-- AÑADIR TAREAS -->
               <ion-row>
                 <ion-col *ngIf="nuevaTarea">
@@ -153,42 +161,50 @@
               <!-- AÑADIR SLIDE -->
               <ion-row>
                 <ion-col *ngIf="nuevoSlide">
-                  <ion-item>
+            <ion-item>
                     <ion-label position="floating">
                       Titulo
                     </ion-label>
                     <ion-input [(ngModel)]="nuevoSlide.titulo"></ion-input>
                   </ion-item>
-                  <ion-item>
-                    <ion-label position="floating">
-                      Imagen
-                    </ion-label>
-                    <ion-input [(ngModel)]="nuevoSlide.img"></ion-input>
-                  </ion-item>
-                  <ion-item>
+            <ion-item>
+              
+              <ion-label >
+                Imagen
+              </ion-label>
+              <ion-buttons slot="end">
+                <ion-button >
+                        <ion-icon  for="file-upload" slot="end" name="images"></ion-icon>
+                        <ion-input (change)="openImage($event)"  [(ngModel)]="nuevoSlide.img" id="file-upload" type="file" accept="image/*"></ion-input>
+                    <!-- <ion-input [(ngModel)]="nuevoSlide.img"></ion-input> -->
+                      </ion-button>
+                  </ion-buttons>
+            </ion-item>
+            <ion-item>
                     <ion-label position="floating">
                       Valor
                     </ion-label>
                     <ion-input [(ngModel)]="nuevoSlide.valor"></ion-input>
                   </ion-item>
-                  <ion-item>
+            <ion-item>
                     <ion-label position="floating">
                       Tiempo
                     </ion-label>
                     <ion-input [(ngModel)]="nuevoSlide.tiempo"></ion-input>
-                  </ion-item>
-                  <ion-item>
+            </ion-item>
+            <ion-item>
                     <ion-label position="floating">
                       Url
                     </ion-label>
                     <ion-input [(ngModel)]="nuevoSlide.url"></ion-input>
-                  </ion-item>
+            </ion-item>
                   <ion-button (click)="saveSlide()" expand="full">Guardar</ion-button>
                 </ion-col>
               </ion-row>
               <!-- Fin añadir slide -->
-
+ 
 
         </ion-grid>
       </div>
+
 </ion-content>

@@ -25,4 +25,11 @@ export interface EquipoI {
   tarea: string; 
 }
 
+interface AsistenciaI {
+    uid: string;
+    nombre: string;
+    area: string;
+    fechaActual: string;
+}
+
 export const EquiposIIEE = [ 'EPH', 'EOH','IS','EIM','IPCSJ','Cartografía','ADRRA','MMUNVRA','RUB','ENGHO ','IVCC', 'PGB'];

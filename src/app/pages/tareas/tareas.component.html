@@ -14,6 +14,11 @@
 
 
 <ion-content>
+    <div class="center-content-container">
+        <div class="content-container">
+            <h1  class=" content">Tareas del Instituto </h1>
+        </div>
+      </div>
 <div class="fondo">
         <ion-grid>
 
@@ -26,7 +31,7 @@
           </ion-row>
           <ion-row *ngFor="let tarea of tareas" >
 
-            <ion-col> 
+            <ion-col>
                 <ion-label>
                     {{tarea.area}}
                 </ion-label>

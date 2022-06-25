@@ -1,8 +1,99 @@
+
+
+.full-page-width {
+    width: 100%;
+    overflow: hidden;
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,105,8,1) 0%, rgba(111,49,49,1) 100%, rgba(111, 75, 13) 100%);
+    height: 500px;
+}
+
+.content-container {
+    width:100%;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,105,8,1) 0%, rgba(168,135,76,1) 56%, rgb(111, 75, 13) 100%);
+    margin: 0 auto;
+    padding: 5px;
+}
+
+
+.content {
+    width:100%;
+    height: 100px;
+    background-color:#ca8875fb;
+    font-size: 3em;
+    }
+
+    h1{
+        text-align:center;
+        font-family: 'Tahoma  ';
+        font-size: 4em;
+        color: rgb(248, 231, 231);
+        
+    }
+
+
+
 .fondo{
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,105,8,1) 0%, rgba(168,135,76,1) 56%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,105,8,1) 0%, rgba(168,135,76,1) 56%, rgba(111, 75, 13) 100%);
     margin: 0 auto;
 }
 .tituloTarea{
     font-size: 2em;
 }
+
+ion-row{
+    padding: auto;
+}
+
+
+
+// slide
+
+
+ion-content{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,105,8,1) 0%, rgba(111,49,49,1) 100%, rgba(0,212,255,1) 100%);
+  }
+  
+  ion-slides {
+    display: block;
+    height: 50%;
+  }
+  ion-slides {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,105,8,1) 0%, rgba(111,49,49,1) 100%, rgba(0,212,255,1) 100%);
+  }
+  .slide-img-padding{
+    padding: 40px;
+    width: 70%;
+  }
+  
+  h3{
+    font-size: 1.5em;
+    font-weight: lighter;
+    margin-bottom: 50px;
+  }
+  
+  @media screen and (max-width: 850px) {
+    h3{
+      font-size: 1.7em ;
+      margin-left: 5px;
+    }
+    
+    // .redirecto{
+    //     margin-top: 1%;
+    //     font-family: 'Courier', monospace;
+        
+    // }
+  }
+  
+  .colore{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,105,8,1) 0%, rgba(111,49,49,1) 100%, rgba(0,212,255,1) 100%);
+  }
+  
+  
+  
+  
