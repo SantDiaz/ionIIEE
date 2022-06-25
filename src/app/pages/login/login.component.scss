@@ -27,7 +27,6 @@
 }
 .titulo{
     height: 50%;
-    color:  #000;
     font-size:medium;
     font-family: 'Times New Roman', Times, serif;
     
@@ -64,8 +63,9 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,105,8,1) 0%, rgba
 
 .content-container {
     width:100%;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,105,8,1) 0%, rgba(168,135,76,1) 56%, rgba(0,212,255,1) 100%);
+   
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(232,105,8,1) 0%, rgba(111,49,49,1) 100%, rgba(0,212,255,1) 100%);
     margin: 0 auto;
     padding: 5px;
 }

@@ -4,11 +4,11 @@
       </ion-buttons>
   <ion-buttons slot="start" >
       <ion-menu-button
-      color="danger"
+      color="success"
       menu="primerMenu"
       > </ion-menu-button>
   </ion-buttons>
-  <img slot="start"  routerLink="/home" src="../../assets/imgs/logoiiee.png" width="300" height="70"/>
+  <img slot="start"  routerLink="/login" src="../../assets/imgs/logoiiee.png" width="300" height="70"/>
     </ion-toolbar>
   </ion-header>
   
@@ -42,12 +42,11 @@
                               <ion-list>
                                 <!-- [(ngModel)]="credenciales.correo"  -->
                                 <!--  [(ngModel)]="credenciales.password" -->
-                                  <ion-item>
-                                      <ion-icon  name="person" class="icon-login"></ion-icon>
-                                      <ion-input [(ngModel)]="credenciales.correo" name="user" type="text" required placeholder="Usuario"></ion-input>
+                                  <ion-item color="danger">
+                                      <ion-icon  name="person-outline" class="icon-login"></ion-icon>
+                                      <ion-input  [(ngModel)]="credenciales.correo" name="user" type="text" required placeholder="Usuario"></ion-input>
                                   </ion-item>
-                                  <br />
-                                  <ion-item>
+                                  <ion-item color="danger">
                                       <ion-icon name="lock-closed-outline" class="icon-login"></ion-icon>
                                       <ion-input [(ngModel)]="credenciales.password" name="password" type="password" required placeholder="Contraseña"></ion-input>
                                   </ion-item>
@@ -60,14 +59,14 @@
                           
   
                           <ion-col>
-                              <ion-button type="submit" (click)="login()" fill="solid" expand="full">
+                              <ion-button color="danger" type="submit" (click)="login()" fill="solid" expand="full">
                                   Entrar
                               </ion-button>
                               <ion-col>
                                 <ion-label>
                                     <h3>¿No tienes una cuenta?</h3>
                                     <br>
-                                    <ion-button   routerLink="/registro" type="submit"  fill="solid" expand="full">
+                                    <ion-button  color="danger" routerLink="/registro" type="submit"  fill="solid" expand="full">
                                         Registrarse
                                     </ion-button>
                                 </ion-label>

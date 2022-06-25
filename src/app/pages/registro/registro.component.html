@@ -4,11 +4,11 @@
     </ion-buttons>
 <ion-buttons slot="start" >
     <ion-menu-button
-    color="danger"
+    color="success"
     menu="primerMenu"
     > </ion-menu-button>
 </ion-buttons>
-<img slot="start"  routerLink="/home" src="../../assets/imgs/logoiiee.png" width="300" height="70"/>
+<img slot="start"  routerLink="/registro" src="../../assets/imgs/logoiiee.png" width="300" height="70"/>
   </ion-toolbar>
 </ion-header>
 
@@ -43,23 +43,19 @@
                   <ion-col>
                       <ion-list>
     
-                          <ion-item>
-                              <ion-icon name="person" class="icon-login"></ion-icon>
+                          <ion-item color="danger">
+                              <ion-icon name="person-outline" class="icon-login"></ion-icon>
                               <ion-input [(ngModel)]="datosUser.nombre" name="user" type="text" required placeholder="Nombre "></ion-input>
                           </ion-item>
-                          <br />
-    
-                          <ion-item>
-                            <ion-icon name="person" class="icon-login"></ion-icon>
-                            <ion-input [(ngModel)]="datosUser.apellido" name="Apellido" type="text" required placeholder="Apellido"></ion-input>
-                        </ion-item>
-                        <br />
-                        <ion-item>
-                          <ion-icon name="heart" class="icon-login"></ion-icon>
+                          <ion-item color="danger">
+                              <ion-icon name="person-add-outline" class="icon-login"></ion-icon>
+                              <ion-input [(ngModel)]="datosUser.apellido" name="Apellido" type="text" required placeholder="Apellido"></ion-input>
+                            </ion-item>
+                            <ion-item color="danger">
+                                <ion-icon name="mail-outline" class="icon-login"></ion-icon>
                           <ion-input [(ngModel)]="datosUser.correo"   name="Email" type="Email" required placeholder="Email"></ion-input>
                       </ion-item>
-                        <br>
-                        <ion-item>
+                        <ion-item color="danger">
                             <ion-icon name="lock-closed-outline" class="icon-login"></ion-icon>
                             <ion-input  [(ngModel)]="datosUser.password"  name="password" type="password" required placeholder="Contraseña"></ion-input>
                         </ion-item>
@@ -72,10 +68,10 @@
                   
     
                   <ion-col>
-                      <ion-button (click)="registrar()" type="submit"  fill="solid" expand="full">
+                      <ion-button color="danger" (click)="registrar()" type="submit"  fill="solid" expand="full">
                           Registrarse
                       </ion-button>
-                      <ion-button routerLink="/login" type="submit"  fill="solid" expand="full">
+                      <ion-button color="danger" routerLink="/login" type="submit"  fill="solid" expand="full">
                           Iniciar sesion
                       </ion-button>
                   </ion-col>
