@@ -21,6 +21,7 @@ export class RegistroComponent implements OnInit {
       nombre: null,
       apellido: null,
       correo: null,
+      area: null,
       uid: null,
       password: null,
       perfil: 'visitante',

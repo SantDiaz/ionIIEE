@@ -14,6 +14,7 @@ export interface UserI {
   apellido: string;
   correo: string;
   password: string;
+  area: string;
   perfil: 'visitante'| 'admin',
 }
 

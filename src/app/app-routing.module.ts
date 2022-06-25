@@ -26,10 +26,7 @@ const routes: Routes = [
   {
     path: 'tareas', component: TareasComponent
   },
-  {
-    path: 'cards',
-    loadChildren: () => import('./pages/cards/cards.module').then( m => m.CardsPageModule)
-  },
+
 ];
 
 @NgModule({

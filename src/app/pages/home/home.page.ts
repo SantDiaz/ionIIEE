@@ -19,6 +19,14 @@ export class HomePage {
   datosUser: UserI[];
   asistencia: AsistenciaI[]=[];
 
+  images: [
+    {img: '../../assets/icons/poblacion.png'},
+    {img: '../../assets/icons/poblacion.png'},
+    {img: '../../assets/icons/poblacion.png'},
+    {img: '../../assets/icons/poblacion.png'},
+    {img: '../../assets/icons/poblacion.png'},
+]
+
   constructor(private menuCtrl: MenuController,
               private auth: AuthService,
               private interaction: InteractionService,

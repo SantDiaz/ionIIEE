@@ -28,17 +28,17 @@
         
           <ion-row class="ion-justify-content-end">
               <ion-col size="4">
-                  <ion-button color="secondary" (click)="AddTarea()">
+                  <ion-button color="danger" (click)="AddTarea()">
                       Añadir Tarea
                   </ion-button>
               </ion-col>
               <ion-col size="4">
-                <ion-button color="secondary" (click)="AddSlide()">
+                <ion-button color="danger" (click)="AddSlide()">
                     Añadir Slide
                 </ion-button>
             </ion-col>
             <ion-col size="4">
-              <ion-button color="secondary" (click)="AddUser()">
+              <ion-button color="danger" (click)="AddUser()">
                   Añadir User
               </ion-button>
           </ion-col>
@@ -107,7 +107,7 @@
               </ion-label>
               <ion-input [(ngModel)]="nuevaTarea.tarea"></ion-input>
             </ion-item>
-            <ion-button (click)="saveTarea()" expand="full">Guardar</ion-button>
+            <ion-button color="danger" (click)="saveTarea()" expand="full">Guardar</ion-button>
           </ion-col>
         </ion-row>
         <!-- FIN AÑADIR TAREAS -->
@@ -154,7 +154,7 @@
               </ion-label>
               <ion-input [(ngModel)]="nuevoSlide.url"></ion-input>
         </ion-item>
-            <ion-button (click)="saveSlide()" expand="full">Guardar</ion-button>
+            <ion-button color="danger" (click)="saveSlide()" expand="full">Guardar</ion-button>
           </ion-col>
         </ion-row>
         <!-- Fin añadir slide -->

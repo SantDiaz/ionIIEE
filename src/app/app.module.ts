@@ -9,16 +9,15 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment.prod';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { CardsPage } from './pages/cards/cards.page';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { HomePage } from './pages/home/home.page';
 import { LoginComponent } from './pages/login/login.component';
-import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './pages/menu/menu.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { TareasComponent } from './pages/tareas/tareas.component';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,6 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     LoginComponent,
     RegistroComponent,
     HomePage,
-    CardsPage,
     MenuComponent,
     AdminComponent,
     TareasComponent,
@@ -40,8 +38,14 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
   FormsModule,
   AngularFireModule.initializeApp(environment.firebaseConfig),
   AngularFireAuthModule,
-  AngularFirestoreModule,
+  AngularFirestoreModule.enablePersistence() ,
   AngularFireStorageModule,
+  ServiceWorkerModule.register('ngsw-worker.js', {
+    enabled: environment.production,
+    // Register the ServiceWorker as soon as the application is stable
+    // or after 30 seconds (whichever comes first).
+    registrationStrategy: 'registerWhenStable:30000'
+  }),
   // MatDialogModule,
   
 

@@ -14,7 +14,7 @@
     </ion-list-header>
   
     <ion-menu-toggle >
-      <ion-item *ngIf="rol === 'admin' " detail="true" [routerLink]="['/admin']" >
+      <ion-item *ngIf="rol === 'admin' && login == true " detail="true" [routerLink]="['/admin']" >
             <ion-label>
               Admin
             </ion-label>

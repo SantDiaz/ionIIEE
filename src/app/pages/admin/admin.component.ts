@@ -5,6 +5,8 @@ import { FirestorageService } from 'src/app/services/firestorage.service';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { InteractionService } from 'src/app/services/interaction.service';
 
+
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -49,6 +51,7 @@ export class AdminComponent implements OnInit {
       apellido: '',
       correo: '', 
       password: '',
+      area: '',
       perfil: 'visitante',
   
     }
