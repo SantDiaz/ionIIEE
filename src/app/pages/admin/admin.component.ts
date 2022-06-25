@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EquipoI, EquiposIIEE, SlideI } from 'src/app/models/models';
+import { EquipoI, EquiposIIEE, SlideI, UserI } from 'src/app/models/models';
+import { AuthService } from 'src/app/services/auth.service';
 import { FirestorageService } from 'src/app/services/firestorage.service';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { InteractionService } from 'src/app/services/interaction.service';
@@ -11,24 +12,73 @@ import { InteractionService } from 'src/app/services/interaction.service';
 })
 export class AdminComponent implements OnInit {
 
+  datosUser: UserI[];
+  nuevoUser: UserI;
   tareas: EquipoI[] =[];
-  slide: SlideI[] =[];
   nuevaTarea: EquipoI;
-
+  slide: SlideI[] =[];
   Equiposiiee = EquiposIIEE;
-  slides: SlideI[] =[];
   nuevoSlide: SlideI;
   nuevaImage='';
   constructor(private db: FirestoreService,
               private interacion: InteractionService, 
+              private auth: AuthService,
               private firestorageService: FirestorageService,
               ) { }
 
   ngOnInit() {
     this.loadEquipos();
     this.loadSlide();
+    this.loadRegister();
   }
 
+  loadRegister(){ 
+ 
+    const path = 'usuarios';
+    this.db.getCollection<UserI>(path).subscribe( res => {
+      if(res){
+        this.datosUser = res; 
+      }
+    })
+  }
+
+  AddUser(){
+    this.nuevoUser={
+      uid: this.db.getId(), //Crea un id aleatorio de muchos digitos 
+      nombre: '',
+      apellido: '',
+      correo: '', 
+      password: '',
+      perfil: 'visitante',
+  
+    }
+  }
+
+ async saveUser(){
+    await this.interacion.presentLoading('Guardando...');
+    const path = 'usuarios';
+   
+  await  this.db.createDoc(this.nuevoUser, path, this.nuevoUser.uid);
+    this.interacion.presentToast('Guardado con exito');
+    this.interacion.closeLoading();
+  }
+
+  
+  editUser(user: UserI){
+    console.log('fuuncio', user);
+    this.nuevoUser = user;
+  }
+
+  async  deleteUser(user: UserI){
+    const res = await this.interacion.presentAlert('Alerta', '¿Seguro que deseas eliminar?');
+      if (res){
+          const path = 'usuarios';
+      await this.db.deleteDoc(path, user.uid);
+          this.interacion.presentToast('Eliminado con exito');
+      }
+    }
+
+  //INICIO TAREAAAA 
 AddTarea(){
       this.nuevaTarea={
       id: this.db.getId(), //Crea un id aleatorio de muchos digitos 

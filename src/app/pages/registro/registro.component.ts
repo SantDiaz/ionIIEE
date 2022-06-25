@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 })
 export class RegistroComponent implements OnInit {
 
+  marcar: UserI[]=[];
 
     datosUser : UserI = {
       nombre: null,
@@ -28,6 +29,7 @@ export class RegistroComponent implements OnInit {
   constructor( private auth: AuthService,
               private firestore: FirestoreService,
               // private firestore: AngularFirestore,
+              private db: FirestoreService,
               private interaction: InteractionService,
               private router: Router) { }
 
@@ -35,7 +37,6 @@ export class RegistroComponent implements OnInit {
   
   async registrar(){
     this.interaction.presentLoading('Registrando...')
-    console.log("dasda", this.datosUser);
     const res= await  this.auth.registrarUser(this.datosUser).catch(error => {
         this.interaction.closeLoading();
         this.interaction.presentToast('Error, por favor reintente')
@@ -55,6 +56,14 @@ export class RegistroComponent implements OnInit {
       }
   }
 
+  loadRegister(){ 
+    const path = 'marcar';
+    this.db.getCollection<UserI>(path).subscribe( res => {
+      if(res){
+        this.marcar = res; 
+      }
+    })
+  }
 
   // async IngresarConGoogle(){
   //   const{ email, pass } = this.datosUser.value;

@@ -1,71 +1,78 @@
-  <ion-menu side="start" menuId="primerMenu" contentId="menu">
-    <ion-header>
-      <ion-toolbar color="success">
-        <ion-title>IIEE</ion-title>
-      </ion-toolbar>
-    </ion-header>
+<ion-menu side="start" menuId="primerMenu" contentId="menu">
+  <ion-header>
+    <ion-toolbar color="success">
+      <ion-title>IIEE</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-  <ion-content color="danger">
+<ion-content color="danger">
 
-    <ion-list >
+  <ion-list >
 
-      <ion-list-header color="danger">
-        <strong >Menú</strong>
-      </ion-list-header>
-    
-      <ion-menu-toggle >
-        <ion-item *ngIf="rol === 'admin' " detail="true" [routerLink]="['/admin']" >
-              <ion-label>
-                Admin
-              </ion-label>
-              <ion-icon slot="start" name="home"></ion-icon>
-        </ion-item>
-    
-      </ion-menu-toggle>
-      
-      <ion-item  detail="true" *ngIf="login == true" [routerLink]="['/tareas']" >
-        <ion-label>
-          Tareas
-        </ion-label>
-        <ion-icon slot="start" name="apps"></ion-icon>
+    <ion-list-header color="danger">
+      <strong >Menú</strong>
+    </ion-list-header>
+  
+    <ion-menu-toggle >
+      <ion-item *ngIf="rol === 'admin' " detail="true" [routerLink]="['/admin']" >
+            <ion-label>
+              Admin
+            </ion-label>
+            <ion-icon slot="start" name="accessibility-outline"></ion-icon>
       </ion-item>
-      
-      <ion-menu-toggle *ngIf="login == false">
-        <ion-item color="danger" detail="true" [routerLink]="['/login']" routerLinkActive="router-link-active" >
-          <ion-label>
-           Iniciar Sesion
-          </ion-label>
-          <ion-icon slot="start" name="person-outline"></ion-icon>
-        </ion-item>
-    
-      </ion-menu-toggle>
-    
-      <ion-menu-toggle *ngIf="login == false">
-        <ion-item color="danger" detail="true" [routerLink]="['/registro']" routerLinkActive="router-link-active" >
-          <ion-label>
-           Registrarse
-          </ion-label>
-          <ion-icon slot="start" name="add"></ion-icon>
-        </ion-item>
-    
-      </ion-menu-toggle>
-
-      
-    
-    <ion-menu-toggle *ngIf="login">
-    
-      <ion-item detail="true" (click)="logout()">
-        <ion-label>
-         Cerrar Sesion 
-        </ion-label>
-        <ion-icon slot="start" name="log-out-outline"></ion-icon>
-      </ion-item>
-    
+  
     </ion-menu-toggle>
-      
     
-    </ion-list>
-  </ion-content>
+    <ion-item  detail="true" *ngIf="login == true" [routerLink]="['/home']" >
+      <ion-label>
+        Home
+      </ion-label>
+      <ion-icon slot="start" name="home-outline"></ion-icon>
+    </ion-item>
+    
+    <ion-item  detail="true" *ngIf="login == true" [routerLink]="['/tareas']" >
+      <ion-label>
+        Tareas
+      </ion-label>
+      <ion-icon slot="start" name="apps"></ion-icon>
+    </ion-item>
+
+    <ion-menu-toggle *ngIf="login == false">
+      <ion-item color="danger" detail="true" [routerLink]="['/login']" routerLinkActive="router-link-active" >
+        <ion-label>
+         Iniciar Sesion
+        </ion-label>
+        <ion-icon slot="start" name="person-outline"></ion-icon>
+      </ion-item>
+  
+    </ion-menu-toggle>
+  
+    <ion-menu-toggle *ngIf="login == false">
+      <ion-item color="danger" detail="true" [routerLink]="['/registro']" routerLinkActive="router-link-active" >
+        <ion-label>
+         Registrarse
+        </ion-label>
+        <ion-icon slot="start" name="add"></ion-icon>
+      </ion-item>
+  
+    </ion-menu-toggle>
+
+    
+  
+  <ion-menu-toggle *ngIf="login">
+  
+    <ion-item detail="true" (click)="logout()">
+      <ion-label>
+       Cerrar Sesion 
+      </ion-label>
+      <ion-icon slot="start" name="log-out-outline"></ion-icon>
+    </ion-item>
+  
+  </ion-menu-toggle>
+    
+  
+  </ion-list>
+</ion-content>
 </ion-menu>
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FileDetector } from 'protractor';
-import { HomePageModule } from '../../home/home.module';
+import { HomePageModule } from '../home/home.module';
 
 HomePageModule
 

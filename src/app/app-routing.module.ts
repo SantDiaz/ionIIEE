@@ -8,7 +8,7 @@ import { TareasComponent } from './pages/tareas/tareas.component';
 
 const routes: Routes = [
   {
-    path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: 'home', loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: '', redirectTo: 'login', pathMatch: 'full'

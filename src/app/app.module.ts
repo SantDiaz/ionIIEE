@@ -11,7 +11,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { CardsPage } from './pages/cards/cards.page';
 import { RegistroComponent } from './pages/registro/registro.component';
-import { HomePage } from './home/home.page';
+import { HomePage } from './pages/home/home.page';
 import { LoginComponent } from './pages/login/login.component';
 import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';

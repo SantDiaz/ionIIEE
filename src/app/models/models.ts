@@ -9,10 +9,10 @@ export interface SlideI{
 }  
 
 export interface UserI {
+  uid: string;
   nombre: string;
   apellido: string;
   correo: string;
-  uid: string;
   password: string;
   perfil: 'visitante'| 'admin',
 }
@@ -25,7 +25,7 @@ export interface EquipoI {
   tarea: string; 
 }
 
-interface AsistenciaI {
+export interface AsistenciaI {
     uid: string;
     nombre: string;
     area: string;

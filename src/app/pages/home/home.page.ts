@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { Router, RouterLinkWithHref } from '@angular/router';
-import { InteractionService } from '../services/interaction.service';
-import { FirestoreService } from '../services/firestore.service';
-import { SlideI } from '../models/models';
+import { InteractionService } from '../../services/interaction.service';
+import { FirestoreService } from '../../services/firestore.service';
+import { AsistenciaI, EquipoI, SlideI, UserI } from '../../models/models';
 
 @Component({
   selector: 'app-home',
@@ -14,10 +14,10 @@ import { SlideI } from '../models/models';
 export class HomePage {
 
   login: boolean = false;
-
   slides: SlideI[] =[];
-   nuevoSlide: SlideI;
- 
+  nuevoSlide: SlideI;
+  datosUser: UserI[];
+  asistencia: AsistenciaI[]=[];
 
   constructor(private menuCtrl: MenuController,
               private auth: AuthService,
@@ -34,6 +34,7 @@ export class HomePage {
                           }
                         });
                         this.loadSlide();
+                        this.loadRegister();
               }
 
      
@@ -50,6 +51,18 @@ loadSlide(){
   })
 }
 
+loadRegister(){ 
+ 
+  const path = 'usuarios';
+  this.db.getCollection<UserI>(path).subscribe( res => {
+    if(res){
+      this.datosUser = res; 
+    }
+  })
+}
+
+
+
 menuOption(){
     this.menuCtrl.toggle();
 }
@@ -63,10 +76,11 @@ logout(){
 redirecTo(){
 console.log("si");
 
+
 }
 
 marcar(){
-
+      console.log("no funciona :C");
 }
 
 }

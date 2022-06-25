@@ -2,12 +2,15 @@
   <ion-toolbar>
     <ion-buttons slot="start">
     </ion-buttons>
-<ion-buttons slot="start" >
+<ion-buttons slot="end" >
     <ion-menu-button
     color="success"
     menu="primerMenu"
     > </ion-menu-button>
 </ion-buttons>
+<ion-button slot="start">
+  <ion-back-button defaultHref="home"></ion-back-button>
+</ion-button>
 <img slot="start"  routerLink="/home" src="../../assets/imgs/logoiiee.png" width="300" height="70"/>
   </ion-toolbar>
 </ion-header>
@@ -22,20 +25,201 @@
         </div>
       </div>
         <ion-grid>
-          <!--  LISTA DE TAREAS -->
+        
           <ion-row class="ion-justify-content-end">
-              <ion-col size="5">
+              <ion-col size="4">
                   <ion-button color="secondary" (click)="AddTarea()">
                       Añadir Tarea
                   </ion-button>
               </ion-col>
-              <ion-col size="5">
+              <ion-col size="4">
                 <ion-button color="secondary" (click)="AddSlide()">
                     Añadir Slide
                 </ion-button>
             </ion-col>
+            <ion-col size="4">
+              <ion-button color="secondary" (click)="AddUser()">
+                  Añadir User
+              </ion-button>
+          </ion-col>
           </ion-row>
 
+
+        <!-- AÑADIR USUARIO -->
+        <ion-row>
+          <ion-col *ngIf="nuevoUser">
+            <ion-item>
+              <ion-label position="floating">
+                Nombre
+              </ion-label>
+              <ion-input [(ngModel)]="nuevoUser.nombre"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">
+                Apellido
+              </ion-label>
+              <ion-input [(ngModel)]="nuevoUser.apellido"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">
+                Email
+              </ion-label>
+              <ion-input [(ngModel)]="nuevoUser.correo"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">
+                Contraseña
+              </ion-label>
+              <ion-input type="password" [(ngModel)]="nuevoUser.password"></ion-input>
+            </ion-item>
+            <ion-button color="danger" (click)="saveUser()" expand="full">Guardar</ion-button>
+          </ion-col>
+        </ion-row>
+        <!-- FIN AÑADIR USUARIO -->
+
+        <!-- AÑADIR TAREAS -->
+        <ion-row>
+          <ion-col *ngIf="nuevaTarea">
+          <ion-list>
+            <ion-item>
+              <ion-select [(ngModel)]="nuevaTarea.area" okText="Aceptar" cancelText="Cancelar" placeholder="Seleccionar equipo">
+                <ion-select-option *ngFor="let area of Equiposiiee" [value]="area">{{area}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+
+        
+            <ion-item>
+              <ion-label position="floating">
+                Nombre
+              </ion-label>
+              <ion-input [(ngModel)]="nuevaTarea.nombre"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">
+                Apellido
+              </ion-label>
+              <ion-input [(ngModel)]="nuevaTarea.apellido"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">
+                Tarea
+              </ion-label>
+              <ion-input [(ngModel)]="nuevaTarea.tarea"></ion-input>
+            </ion-item>
+            <ion-button (click)="saveTarea()" expand="full">Guardar</ion-button>
+          </ion-col>
+        </ion-row>
+        <!-- FIN AÑADIR TAREAS -->
+
+
+
+        <!-- AÑADIR SLIDE -->
+        <ion-row>
+          <ion-col *ngIf="nuevoSlide">
+        <ion-item>
+              <ion-label position="floating">
+                Titulo
+              </ion-label>
+              <ion-input [(ngModel)]="nuevoSlide.titulo"></ion-input>
+            </ion-item>
+        <ion-item>
+
+        <ion-label >
+          Imagen
+        </ion-label>
+        <ion-buttons slot="end">
+          <ion-button >
+                  <ion-icon  for="file-upload" slot="end" name="images"></ion-icon>
+                  <ion-input (change)="openImage($event)"  [(ngModel)]="nuevoSlide.img" id="file-upload" type="file" accept="image/*"></ion-input>
+              <!-- <ion-input [(ngModel)]="nuevoSlide.img"></ion-input> -->
+                </ion-button>
+            </ion-buttons>
+        </ion-item>
+        <ion-item>
+              <ion-label position="floating">
+                Valor
+              </ion-label>
+              <ion-input [(ngModel)]="nuevoSlide.valor"></ion-input>
+            </ion-item>
+        <ion-item>
+              <ion-label position="floating">
+                Tiempo
+              </ion-label>
+              <ion-input [(ngModel)]="nuevoSlide.tiempo"></ion-input>
+        </ion-item>
+        <ion-item>
+              <ion-label position="floating">
+                Url
+              </ion-label>
+              <ion-input [(ngModel)]="nuevoSlide.url"></ion-input>
+        </ion-item>
+            <ion-button (click)="saveSlide()" expand="full">Guardar</ion-button>
+          </ion-col>
+        </ion-row>
+        <!-- Fin añadir slide -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+            <!-- LISTA DE USUARIOS -->
+            <ion-label class="tituloTarea"> USUARIOS:</ion-label>
+            <ion-row *ngFor="let user of datosUser" >
+                <ion-col >
+                    <ion-label>
+                       {{user.nombre}}
+                    </ion-label>
+                </ion-col>
+
+                <ion-col> 
+                    <ion-label>
+                      {{user.apellido}}
+                    </ion-label>
+                </ion-col>
+
+                <ion-col> 
+                    <ion-label>
+                      {{user.correo}}
+                    </ion-label>
+                </ion-col>
+                <ion-col> 
+                  <ion-label>
+                    {{user.area}}
+                  </ion-label>
+                </ion-col>
+                <ion-col>
+                <ion-button>
+                      <ion-button color="secondary" (click)="editUser(user)">
+                          <ion-icon color="danger"   name="create"></ion-icon>
+                      </ion-button>
+                      <ion-button color="secondary" (click)="deleteUser(user)">
+                        <ion-icon color="danger" name="trash"></ion-icon>
+                      </ion-button>
+                </ion-button>
+                </ion-col>
+            </ion-row>
+          
+          
+
+            <!-- FIN USUARIOS -->
+
+
+  <!--  LISTA DE TAREAS -->
           <ion-label class="tituloTarea"> TAREAS:</ion-label>
             <ion-row *ngFor="let tarea of tareas" >
                 <ion-col >
@@ -121,88 +305,7 @@
 
             <!-- FIN SLIDEEE -->
  
-            <!-- AÑADIR TAREAS -->
-              <ion-row>
-                <ion-col *ngIf="nuevaTarea">
-                <ion-list>
-                  <ion-item>
-                    <ion-select [(ngModel)]="nuevaTarea.area" okText="Aceptar" cancelText="Cancelar" placeholder="Seleccionar equipo">
-                      <ion-select-option *ngFor="let area of Equiposiiee" [value]="area">{{area}}</ion-select-option>
-                    </ion-select>
-                  </ion-item>
-                </ion-list>
-
-               
-                  <ion-item>
-                    <ion-label position="floating">
-                      Nombre
-                    </ion-label>
-                    <ion-input [(ngModel)]="nuevaTarea.nombre"></ion-input>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label position="floating">
-                      Apellido
-                    </ion-label>
-                    <ion-input [(ngModel)]="nuevaTarea.apellido"></ion-input>
-                  </ion-item>
-                  <ion-item>
-                    <ion-label position="floating">
-                      Tarea
-                    </ion-label>
-                    <ion-input [(ngModel)]="nuevaTarea.tarea"></ion-input>
-                  </ion-item>
-                  <ion-button (click)="saveTarea()" expand="full">Guardar</ion-button>
-                </ion-col>
-              </ion-row>
-              <!-- FIN AÑADIR TAREAS -->
-
-
-
-              <!-- AÑADIR SLIDE -->
-              <ion-row>
-                <ion-col *ngIf="nuevoSlide">
-            <ion-item>
-                    <ion-label position="floating">
-                      Titulo
-                    </ion-label>
-                    <ion-input [(ngModel)]="nuevoSlide.titulo"></ion-input>
-                  </ion-item>
-            <ion-item>
-              
-              <ion-label >
-                Imagen
-              </ion-label>
-              <ion-buttons slot="end">
-                <ion-button >
-                        <ion-icon  for="file-upload" slot="end" name="images"></ion-icon>
-                        <ion-input (change)="openImage($event)"  [(ngModel)]="nuevoSlide.img" id="file-upload" type="file" accept="image/*"></ion-input>
-                    <!-- <ion-input [(ngModel)]="nuevoSlide.img"></ion-input> -->
-                      </ion-button>
-                  </ion-buttons>
-            </ion-item>
-            <ion-item>
-                    <ion-label position="floating">
-                      Valor
-                    </ion-label>
-                    <ion-input [(ngModel)]="nuevoSlide.valor"></ion-input>
-                  </ion-item>
-            <ion-item>
-                    <ion-label position="floating">
-                      Tiempo
-                    </ion-label>
-                    <ion-input [(ngModel)]="nuevoSlide.tiempo"></ion-input>
-            </ion-item>
-            <ion-item>
-                    <ion-label position="floating">
-                      Url
-                    </ion-label>
-                    <ion-input [(ngModel)]="nuevoSlide.url"></ion-input>
-            </ion-item>
-                  <ion-button (click)="saveSlide()" expand="full">Guardar</ion-button>
-                </ion-col>
-              </ion-row>
-              <!-- Fin añadir slide -->
- 
+           
 
         </ion-grid>
       </div>
